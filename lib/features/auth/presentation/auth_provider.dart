@@ -35,4 +35,25 @@ class AuthProvider with ChangeNotifier {
     _token = null;
     notifyListeners();
   }
+
+  Future<bool> register(
+    String name,
+    String lastName,
+    String email,
+    String password,
+  ) async {
+    _isLoading = true;
+    notifyListeners();
+    try {
+      _token = await _authRepository.register(name, lastName, email, password);
+      _isLoading = false;
+      notifyListeners();
+      return true;
+    } catch (e) {
+      _isLoading = false;
+      notifyListeners();
+      print(e);
+      return false;
+    }
+  }
 }
