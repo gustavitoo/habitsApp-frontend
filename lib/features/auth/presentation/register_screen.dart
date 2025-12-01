@@ -145,9 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                   _emailController.text,
                                   _passwordController.text,
                                 );
-                                if (success && mounted) {
+                                if (success && context.mounted) {
                                   Navigator.of(context).pop();
-                                } else if (mounted) {
+                                } else if (context.mounted) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
                                       content: Text('Error al registrarse'),

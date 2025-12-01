@@ -52,7 +52,7 @@ class AuthProvider with ChangeNotifier {
     } catch (e) {
       _isLoading = false;
       notifyListeners();
-      print(e);
+      debugPrint(e.toString());
       return false;
     }
   }

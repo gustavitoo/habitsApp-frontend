@@ -45,6 +45,7 @@ class _TasksScreenState extends State<TasksScreen> {
             DateSelector(
               selectedDate: tasksProvider.selectedDate,
               onDateSelected: tasksProvider.setDate,
+              filter: tasksProvider.selectedFilter,
             ),
             const SizedBox(height: 24),
             // Task List
